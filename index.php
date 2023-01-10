@@ -11,7 +11,7 @@
 <body>
     <h1>Pdo crud Toets</h1>
 
-    <form action="read.php" method="post">
+    <form action="create.php" method="post">
         <label for="merk">Merk</label><br>
         <input type="text" name="merk" id="merk"><br>
 
