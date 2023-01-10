@@ -1,5 +1,4 @@
 <?php
-    echo 'Het meegestuurde Id = ' . $_GET['Id'];
 
 require('config.php');
 
@@ -21,9 +20,10 @@ $sql = "DELETE FROM dureauto
 
 $statement = $pdo->prepare($sql);
 
-$statement->bindValue(':Id', $_GET['Id'], PDO::PARAM_INT);
 
-$result = $statement->execute();
+$result = $statement->execute([
+    ':Id;' => $_GET["Id"]
+]);
 
 if ($result) {
     echo "Het record is verwijderd";
