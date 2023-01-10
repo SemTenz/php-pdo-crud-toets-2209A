@@ -19,7 +19,7 @@ $sql = "SELECT Id
               ,Model
               ,Topsnelheid
               ,Prijs
-        FROM Persoon";
+        FROM dureauto";
 
 
 $statement = $pdo->prepare($sql);
@@ -47,7 +47,7 @@ foreach($result as $info) {
                    </tr>";
 }
 ?>
-<h3>Persoonsgegevens</h3>
+<h1>De vijf duurste auto's ter wereld</h1>
 
 <table border='1'>
     <thead>
@@ -55,7 +55,7 @@ foreach($result as $info) {
         <th>Model</th>
         <th>Topsnelheid</th>
         <th>Prijs</th>
-        <th></th>
+        <th>Delete</th>
     </thead>
     <tbody>
         <?php echo $tableRows; ?>
