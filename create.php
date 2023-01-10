@@ -1,8 +1,8 @@
 <?php
-// var_dump($_POST);exit();
+
 include('config.php');
 
-// DSN staat voor data sourcename.
+
 $dsn = "mysql:host=$dbHost;dbname=$dbName;charset=UTF8";
 
 try {
@@ -13,8 +13,8 @@ try {
           Neem contact op met de Administrator<br>";
     echo "Systeemmelding: " . $e->getMessage();
 }
-// Maak de sql query voor het inserten van een record
-$sql = "INSERT INTO Persoon (Id
+
+$sql = "INSERT INTO DureAuto (Id
                             ,Merk   
                             ,Model
                             ,Topsnelheid
@@ -26,5 +26,10 @@ $sql = "INSERT INTO Persoon (Id
                             ,:prijs);";
 
 $statement = $pdo->prepare($sql);
+
+$statement->bindValue(':merk', $_POST['merk'], PDO::PARAM_STR);
+$statement->bindValue(':model', $_POST['model'], PDO::PARAM_STR);
+$statement->bindValue(':topsnelheid', $_POST['topsnelheid'], PDO::PARAM_STR);
+$statement->bindValue(':prijs', $_POST['prijs'], PDO::PARAM_STR);
 
 $statement->execute();
