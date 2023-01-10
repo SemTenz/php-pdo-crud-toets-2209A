@@ -20,9 +20,10 @@ $sql = "INSERT INTO Persoon (Id
                             ,Topsnelheid
                             ,Prijs)
         VALUES              (NULL
-                            ,:firstname
-                            ,:infix
-                            ,:lastname);";
+                            ,:merk
+                            ,:model
+                            ,:topsnelheid
+                            ,:prijs);";
 
 $statement = $pdo->prepare($sql);
 
