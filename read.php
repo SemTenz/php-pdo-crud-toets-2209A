@@ -19,7 +19,8 @@ $sql = "SELECT Id
               ,Model
               ,Topsnelheid
               ,Prijs
-        FROM dureauto";
+        FROM dureauto
+        ORDER BY Prijs DESC";
 
 
 $statement = $pdo->prepare($sql);
@@ -40,7 +41,7 @@ foreach($result as $info) {
                         <td>$info->Topsnelheid</td>
                         <td>$info->Prijs</td>
                         <td>
-                            <a href='delete.php'>
+                            <a href='delete.php?Id=$info->Id'>
                                 <img src='img/b_drop.png' alt='cross'>
                             </a>
                         </td>

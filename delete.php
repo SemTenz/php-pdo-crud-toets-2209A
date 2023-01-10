@@ -21,13 +21,8 @@ $sql = "DELETE FROM dureauto
 $statement = $pdo->prepare($sql);
 
 
-$result = $statement->execute([
-    ':Id;' => $_GET["Id"]
+$statement->execute([
+    ':Id' => $_GET["Id"]
 ]);
-
-if ($result) {
     echo "Het record is verwijderd";
     header('Refresh:2.5; url=read.php');
-} else {
-    echo "Het record is niet verwijderd";
-}
