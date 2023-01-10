@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <title>PDO CRUD</title>
+    <title>PDO CRUD Toets</title>
 </head>
 <body>
-    <h1>PDO CRUD</h1>
+    <h1>Pdo crud Toets</h1>
 
-    <form action="create.php" method="post">
+    <form action="read.php" method="post">
         <label for="merk">Merk</label><br>
         <input type="text" name="merk" id="merk"><br>
 
